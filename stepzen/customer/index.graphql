@@ -1,0 +1,21 @@
+type Customer {
+  email: String
+  name: String
+}
+
+type CustomerList {
+  name: ID
+  value: Customer
+}
+
+type Query {
+  getCutomerById(id: ID!): Customer
+    @rest(
+      endpoint: "https://ups-app-448ea-default-rtdb.asia-southeast1.firebasedatabase.app/customers/$id.json"
+    )
+  getCutomer: [CustomerList]
+    @rest(
+      endpoint: "https://ups-app-448ea-default-rtdb.asia-southeast1.firebasedatabase.app/customers.json"
+      transforms: [{ pathpattern: [], editor: "objectToArray" }]
+    )
+}

@@ -1,8 +1,8 @@
 module.exports = {
-  content: [],
+  content: ["./**/*.tsx"],
   theme: {
     extend: {},
   },
   plugins: [],
-  corePlugins: require('tailwind-rn/unsupported-core-plugins'),
-}
+  corePlugins: require("tailwind-rn/unsupported-core-plugins"),
+};
